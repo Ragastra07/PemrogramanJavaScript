@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>belajar table</title>
+</head>
+<body>
+    <h1>belajar table</h1>
+    <table style="border: 1px solid black;">
+        <colgroup>
+            <col span="2" style="background-color: yellow;">
+            <col style="background-color: yellow;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th colspan="2">nama</th>
+                <!-- <th>nama belakang</th> -->
+                <th>nilai</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>aga</td>
+                <td>ragastra</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>cahyo</td>
+                <td>ralati</td>
+                <td>150</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td rowspan="2">total</td>
+                <td>total</td>
+                <td>170</td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td>rata rata</td>
+                <td>40</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
