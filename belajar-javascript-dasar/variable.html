@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variabel</title>
+</head>
+<body>
+    <script>
+        /*
+        base practices developer dalam kepenulisan nama variabel dengan camel case, yaitu
+        disetiap awal kata menggunakan huruf kecil dan kata selanjutnya diawali dengan kapital dan 
+        dengan tanpa spasi untuk menghubungkan antar katanya.
+        */
+        var fullName;
+        var firstName;
+        var lastName;
+        fullName = "Ragastra Haryo Wijanarku";
+        fullName = "Rugastra Haryo Wijanarku";
+        fullName = "ragastra Haryo Wijanarko";// maka nilai variable yang ada yaitu nilai variable yang terbaru di ubah.
+        firstName = "Ragastra";
+        lastName = "Haryo";
+        //or
+        var firstName2 = "Mega";
+        var lastName2 = "Mauliza";
+        var fullName2 = firstName2 + " " + lastName2;//mengakses variable
+        var combinedName = "aga" +" "+"mega"
+        /*
+        setelah versi ECMAScript 2015 muncul, terdapat perubahan base practice dalam kata kunci pembuatan variable, yaitu 
+        dengan menggukanan kata kunci variabel baru let dan const.
+        hal ini dilakukan karena terdapa kesalahan/masalah pada desain awal kata kunci variabel var. sehingga kepenggunaan nya
+        dibekukan atau tidak disarankan untuk digunakan. 
+        */
+        let firstName3 = "nayla";
+        let lastName3 = "keisha";
+        let fullName3 = firstName3 + " " + lastName3;
+        const firstName4 = "Rafly";
+        //firstName4 = "rafly";// akan error karena kata kunci const dalam penulisan variable bersifat constant artinya tidak bisa diubah ubah.
+        const lastName4 = "Angger";
+        const fullName4 = firstName4 + " " + lastName4;
+        document.writeln(firstName4);// kode ini tidak akan dieksekusi karena terdapat error sebelum nya. sehingga penting untuk memastikan agar clear code dari error / bug free.
+        document.writeln(fullName2);
+        document.writeln(combinedName);
+    </script>
+</body>
+</html>
