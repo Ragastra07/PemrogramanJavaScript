@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipedata array</title>
+</head>
+<body>
+    <script>
+        let arrayKosong = [];
+        let arrayNama = ["ragastra", "Haryo", "Wijananarko", 1];
+
+        // operasi array menambah data
+        const nama = [];
+        nama.push("Ragastra1");
+        nama.push("haryo1");
+        nama.push("wijanarko1", 2);
+        console.table(nama);
+        // operasi arry untuk melihat data ke-
+        console.info(nama[3]);
+        // opersi mengubah data array
+        nama[0] = "Ragastra2";
+        nama[1] = "haryo2";
+        nama[2] = "wijanarko2";
+        nama[3] = 3;
+        // operasi array melihat panjang data
+        console.info(nama.length);
+        // operasi array menghapus data
+        delete arrayNama;
+        delete nama[1];
+        nama.push("Wijasena");
+        // multidimensional array 
+        const array2D = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ];
+        console.table(array2D);
+
+        console.table(nama);
+    </script>
+</body>
+</html>
