@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string tamplate</title>
+</head>
+<body>
+    <script>
+        /*
+        digunakan dengan karakter backtick != petik 1 
+        */
+        const name = "Ragastra Haryo Wijanarko";
+        const value = 80;
+        const tamplate = `name : ${name}, Lulus : ${value > 75}`;
+
+        console.info(tamplate);
+
+        //backtick support dengan multiline seperti berikut
+        const multiline = `nama saya aga, 
+        sekarang lagi belajar, 
+        hobby koding,
+        klo lagi malas, paling tidur`;
+
+        document.writeln("<pre>");
+        document.writeln(multiline);
+        document.writeln("</pre>");
+    </script>
+</body>
+</html>
