@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>konversi string dan number</title>
+</head>
+<body>
+    <script>
+        const value = parseFloat("1");
+        const value2 = 1;
+        const sum = value + value2;
+
+        document.writeln(`<p>${sum}</p>`);
+        document.writeln(`<p>${parseInt("1.1")}</p>`);
+        document.writeln(`<p>${parseFloat("1.1")}</p>`);
+        document.writeln(`<p>${Number("1.1")}</p>`);
+
+        const a = 1;
+        const b = 2;
+        const total = a.toString() + b.toString();
+        document.writeln(`<p>${total}</p>`);
+
+        /*
+        parseInt/Float akan mentolelir kesalahan apa bila kesalahan ada pada posisi belakang data,
+        sehingga data yang salah akan di ignored oleh javascript.
+        apabila data yang salah terletak pada awal data, maka akan di ubah tipedata nya menjadi NaN
+        */
+        document.writeln(`<p>${parseInt("1salah")}</p>`);//tipesata ini akan berubah menjadi NaN.
+        document.writeln(`<p>${parseFloat("1.1salah")}</p>`);// .
+
+        //Number() tidak akan mentolelir kesalahan pada data.
+        document.writeln(`<p>${Number("1.1ups")}</p>`);//NaN
+        document.writeln(`<p>${Number("1x")}</p>`);//NaN
+        document.writeln(`<p>${Number("salah ini")}</p>`);//NaN
+
+        const nilai = Number("salah");//NaN
+        const nilai2 = 100;
+        const jumlah = nilai + nilai2;// hasil operasi pada tipedata NaN akan menghasilkan tipedata NaN juga.
+
+        document.writeln(`<p>${jumlah}</p>`);
+
+        document.writeln(`<p>${isNaN(nilai)}</p>`);//function untuk mengecek tipedata dari sebuah variable apakah NaN atau bukan.
+
+
+    </script>
+</body>
+</html>
