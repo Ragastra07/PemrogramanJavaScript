@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tipedata object</title>
+</head>
+<body>
+    <script>
+        /*
+        assosiative array
+        dimana index bisa digunakan dengan tipe data lain selain number, dan string.
+            pada javascript hal tersebut tidak berlaku, jika dipaksakan untuk digunakan
+        maka secara otomatis tipedata nya akan diubah menjadi tipedata object.
+        */
+       const orang = {};
+
+       //menambah atau mengubah
+       orang["nama"] = "Ragastra";
+       orang["umur"] = 20;
+       orang["alamat"] = "Jl. <NAME>";
+        
+        const person = {
+         "full name": "Haryo",
+         "address": "jl. Ahmad Yani",
+         "city": "lasvegas"
+        }
+       //menghapus
+    //    delete orang["alamat"];
+
+       //menampilkan
+       console.table(orang);
+       console.info(`nama : ${orang.nama}`);
+       console.info(`name : ${person["full name"]}`);
+
+
+       
+    </script>
+</body>
+</html>
