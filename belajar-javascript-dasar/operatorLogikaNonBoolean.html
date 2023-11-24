@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operator logika non boolean</title>
+</head>
+<body>
+    <script>
+        // ||
+        console.info( "hello" || '' ); // hello
+        console.info( "" || [] ); // []
+        console.info( "0" || "nol"); // 0
+        console.info( 0 || "nol"); // nol
+        console.info( null || "null" ); // null-string
+        console.info( undefined || "undefined" ); // undefined-string
+        console.info( 0 || false ); // false
+
+        //contoh case penggunaan || dalam logika non boolean
+        const person  = {
+            firstName : "John",
+            lastName  : "young"
+        }
+        /*
+        const name akan terisi nilai dengan status kondisi truthy dengan pengecekan dari kiri ke kanan.
+        apabila tidak terdapat truthy,  maka akan mengambil nilai falsey yang paling akhir/ujung kanan.
+        */ 
+        const name = person.firstName || person.lastName; 
+        console.info(name);
+
+        // &&
+        /*
+        konsep kerja pada operator and ini adalah kebalikan dari operator or
+        */
+        console.info( "hello" && '' ); // ''
+        console.info( "" && [] ); // ""
+        console.info( "0" && "nol"); // nol
+        console.info( 0 && "nol"); // 0
+        console.info( null && "null" ); // null
+        console.info( undefined && "undefined" ); // undefined
+        console.info( [] && "true" ); // true
+        
+
+    </script>
+</body>
+</html>
