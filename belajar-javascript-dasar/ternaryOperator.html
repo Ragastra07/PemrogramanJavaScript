@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ternary operator</title>
+</head>
+<body>
+    <script>
+        const nilai = 75;
+        let ucapan;
+        // menggunakan cara if else statement
+        if(nilai >= 75){
+            ucapan = "selamat anda lulus";
+        } else {
+            ucapan = "selamat adan tidak lulus";
+        }
+
+        document.writeln(`<p>${ucapan}</p>`);
+
+        // menggunakan ternary operator
+        const score = 40;
+        const greating = score >= 75 ? "selamat anda lulus " : "selamat adan tidak lulus";
+        document.writeln(`<p>${greating}</p>`);
+
+    </script>
+</body>
+</html>
