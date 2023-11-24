@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for loop statement</title>
+</head>
+<body>
+    <script>
+         
+        for (let counter = 1; counter <= 10; counter++){
+            document.writeln(`<p>ini perulangan ke ${counter}</p>`);
+            
+        }
+
+        // perulangan ini akan infinite loop karena dianggap pengkondisian nya selalu true.
+        for ( ; ; ){
+            alert("for loop statement");
+        }
+    </script>
+</body>
+</html>
