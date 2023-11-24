@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>optional chaining</title>
+</head>
+<body>
+    <script>
+        document.writeln(`hilo`);
+        const person = {};
+        let country;
+        if (person.address !== undefined || person.address !== null) {
+            country = person.address.country;
+        } //kurang efeiktif
+
+        document.writeln(`hilo`);
+        document.writeln(`<p>${country}</p>`);
+        document.writeln(`hilo`);
+
+        document.writeln(`halo`);
+        const person1 = {};
+        let country1 = person?.address?.country;// optional chaining lebih efektif
+        document.writeln(`halo`);
+        document.writeln(`<p>${country1}</p>`);
+        document.writeln(`halo`);
+
+
+
+
+    </script>
+</body>
+</html>
