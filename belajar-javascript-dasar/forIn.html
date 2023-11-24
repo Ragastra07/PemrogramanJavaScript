@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for in</title>
+</head>
+<body>
+    <script>
+        const person = {
+            firstName : "tara",
+            middleName : "arts", 
+            lastName : "games"
+        };
+        for (const properties in person) {
+            document.writeln(`<p>${properties} : ${person[properties]}</p>`);// mengakses properti dan mengiterasi nya dari tipedata object. 
+        }
+
+        const name = ["Ragastra", "Haryo", "Wijanarko"];
+        for (const index in name) {
+            document.writeln(`<p>${index} : ${name[index]}</p>`);// mengakses index dan mengiterasi nya dari tipedata array. 
+        }
+    </script>
+</body>
+</html>
