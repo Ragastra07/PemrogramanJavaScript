@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for of</title>
+</head>
+<body>
+   <script>
+    const names = ["Mega", "Mauliza",];
+    // ini akan mengambil value nya dengan cara megiterasi array nya.
+    for (name of names) {
+        document.writeln(`<p>${name}</p>`);
+    }
+
+    const fullnames = ["Ragastra Haryo Wijanarko"];
+    // ini akan mengambil value @karakter nya dengan cara megiterasi string nya.
+    for (karakter of fullnames) {
+        document.writeln(`<p>${karakter}</p>`);
+    }
+
+    // ini akan error karena tipedata object bukanlah iterable.
+    const person = {
+        nama : "tara arts", 
+        hoby : "gaming"
+    };
+    for (data of person) {
+        document.writeln(`<p>${data}</p>`);
+    }
+
+   </script> 
+</body>
+</html>
