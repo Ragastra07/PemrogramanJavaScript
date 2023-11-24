@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>in operator</title>
+</head>
+<body>
+    <script>
+        const person = {
+            "name": "John",
+            "age": 34
+        }
+
+        const result = "name" in person;
+        document.writeln(`<p>${result}</p>`);
+
+        const student = {
+            firstName : "Johny",
+            middleName : undefined
+        }
+
+        if(middleName in student) {
+            alert(`hallo ${student.firstNamez}`);
+        } else {
+            alert("hello");
+        }
+
+        // in operator hanya mengecek isi properti/index saja tanpa mengecek nilai/value nya.
+        const a = [null, "tara", null];
+        const result2 = 0 in a;
+        document.writeln(`<p>${result2}</p>`);
+    </script>
+</body>
+</html>
