@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scope</title>
+</head>
+<body>
+    <script>
+        //lingkungan global scope
+        let counter = 1; 
+
+        function count(){
+            //lingkungan local scope
+            counter++;
+            let firstVar = "first";
+        }
+
+        function other(){
+            //lingkungan local scope
+            document.writeln("hallo");
+            let secVar = "sec";
+            console.info(firstVar);// akan error karena variable lokal lain tidak bisa diakses melalui local scope lain.
+        }
+
+        count();
+        count();
+        console.info(firstVar);// akan error karena variable lokal tidak bisa diakses melalui global scope
+        console.info(secVar);// akan error karena variable lokal tidak bisa diakses melalui global scope
+
+    </script>
+</body>
+</html>
