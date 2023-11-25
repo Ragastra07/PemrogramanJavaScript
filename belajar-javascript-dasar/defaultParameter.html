@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>default parameter</title>
+</head>
+<body>
+    <script>
+        // membuat function parameter
+        
+        function sayHallo(firstName, lastName = "lupa di isi"){
+            document.writeln(`<p>${firstName} ${lastName}</p>`);
+            
+        }
+
+        // memanggil function dengan parameter
+        sayHallo("mega"); // pada para meter lastName akan terisi/berisi data string "lupa di isi", karena string tersebut adalah default value dari parameter tersebut 
+        sayHallo("Ragastra", "Haryo Wijanarko");
+    </script>
+</body>
+</html>
