@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anonymouse function</title>
+</head>
+<body>
+    <script>
+        //anonymouse function dengan memasukan nya kedalam variable
+        let say = function (nama) {
+            document.writeln(`<p>hallo ${nama}</p>`);
+        }
+
+        say("tara");
+
+        //anonymouse function dengan memasukan nya kedalam parameter
+        giveMeName(function(nama) {
+            document.writeln(`<p>halo ${nama}</p>`);
+        }); //PERHATIKAN NOTASI KODE NYA!!!!!!!!!!!!!!!!
+
+        giveMeName("arts");
+    </script>
+</body>
+</html>
