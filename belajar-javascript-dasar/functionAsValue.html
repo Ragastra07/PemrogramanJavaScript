@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function as value</title>
+</head>
+<body>
+    <script>
+        //membuat fuction, nama fuction menggunakan kaidah cemal case.
+        function sayHallo(name){
+            document.writeln(`<p>${name}</p>`);
+        }
+
+        // peng-inputan fucntion kedalam variabel.
+        let say = sayHallo;
+
+        //memanggil function
+        say("hello dunia");
+        sayHallo("hello dunia"); // bisa dipanggil berkali kali.
+
+        function giveMeName(callback) {
+            callback("tara");
+        }
+
+        giveMeName(sayHallo);
+        giveMeName(say); // giveMeName(sayHallo);
+    </script>
+</body>
+</html>
