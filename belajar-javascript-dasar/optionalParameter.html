@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>optional parameter</title>
+</head>
+<body>
+    <script>
+        // membuat function parameter
+        function sayHallo(firstName, lastName){
+            console.log(firstName);
+            console.log(lastName);
+        
+        }
+
+        // memanggil function dengan parameter
+        sayHallo("mega"); // lastNaem akan menjadi undefined
+        sayHallo("Ragastra", "haryo");
+        sayHallo("ragastra", "haryo", "wijanarko"); // pada parameter ke 3 tidak akan ditampilkan dan tidak terjadi error sama seklai.
+
+    </script>
+</body>
+</html>
