@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrow function</title>
+</head>
+<body>
+    <script>
+        const sayHallo = (nama) => {
+            document.writeln(`hallo ${nama}`);
+        }
+
+        const sayhello = (name) => document.write(`hello ${name}`);// arrow function bisa berjalan tanpa perlu block apabila kode yang diperlukan hanya 1 baris.
+        // penyerdehanaan kode diatas sebagai berikut
+        /*
+        arrow function mendukung parameter tanpa dalam kurung apabila nilai parameternya hanya satu.
+        apabila tidak ada parameter dan atau lebih dari satu parameter maka arraow function wajib menggunakan dalam kurung,
+        seperti pada contoh arrow function sum dibawah. 
+        */
+        const sayhello1 = name => document.write(`hello ${name}`);
+
+        sayHallo("tara");
+        sayHallo("tara1");
+
+        //arrow function untuk mengembalikan nilai dalam 1 baris saja.
+        let sum = (bilper, bilked) => bilper + bilked;
+        //tidak perlu seperti bada script dibawah
+        // let sum = (bilper, bilked) => {
+        //     return bilper + bilked;
+        // }
+
+        console.info(sum);
+
+        function giveMeName(callback){
+            callback("tara");
+        }
+
+        giveMeName(nama => console.info(`hallo ${nama}`));
+    </script>
+</body>
+</html>
