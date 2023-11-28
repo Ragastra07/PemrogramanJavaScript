@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this key word</title>
+</head>
+<body>
+    <script>
+        /*
+        hasil dari script dibawah ini akan sama semua yaitu Windows.
+        hal ini karena kata kunci this merefrensikan pemillik dari semua script tersebut yaitu windows, 
+        mesikipun lokasi nya ada di global/function/inner. 
+        */
+        console.info(this);
+
+        function sample(){
+            console.info(this);
+            function inner(){
+                console.info(this);
+            }
+            innser();
+        }
+
+        sample();
+
+        /*
+        namun lain hal nya dengan kode dibawah ini.
+        */ 
+
+        const person = {
+            name : "tara", 
+            sayHallo : function(name){
+                console.info(`hi ${name}, my name is ${this.name}`);
+            }
+        };
+
+        person.sayHallo("ragastra");
+    </script>
+</body>
+</html>
