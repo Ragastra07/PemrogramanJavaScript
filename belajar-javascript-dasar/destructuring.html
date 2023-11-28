@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>destructuring</title>
+</head>
+<body>
+    <script>
+    // destructoring array
+        const names = ["ragastra", "haryo", "wijanarko", "mega", "mauliza"];
+        //ini dengan cara manual
+        const firstName = names[0];
+        const midelName = names[1];
+        const lastName = names[2];
+
+        console.info(firstName);
+        console.info(midelName);
+        console.info(lastName);
+
+        //ini dengan cara destructoring array
+        const [firstNama, mindelNama, LastNama, ...others] = names;
+
+        console.info(firstNama);
+        console.info(midelNama);
+        console.info(lastNama);
+        console.info(others);
+    // destructoring object
+        const person = {
+            firstName1 : "tara", 
+            lastName : "arts", 
+            address : {
+                streat : "jalan traas", 
+                city : "jakarta", 
+                country : "indonesia", 
+            },
+            hobby : "gaming",
+            chanel : "tara arts game"
+        }
+        //ini dengan cara manual
+        const namaDepan = person.firstName;
+        const namaBelakang = person.lastName;
+        //ini dengan cara desctructoring object
+        /*
+        terdapat perbedaan dengan destructuring array,
+        dimana untuk object ini menggunakan {} dan urutan data/porperties disesuaikan dengan yang ada di object(nama properties nya).
+        selain itu destructuring object mendukung nested object seperti contoh pada property address dibawah.
+        */
+        let {firstName1, LastName, hobby, address : {country, city}, ...others1} = person;
+        console.info(firstName1);
+        console.info(LastName);
+        console.info(hobby);
+        console.info(country);// langsung propery nested nya, karena property induk nya sudak tidak berfungsi lagi.
+        console.info(city);
+        console.info(others1);
+
+        /*
+        destructuring dapat dilakukan didalam parameter, 
+        yang mana terdapat data/property yang berasal dari object yang dimasukan kedalam parameter.
+        */
+        function displayPerson({firstName, midelName, lastName}){
+            console.info(firstName);
+            console.info(midelName);
+            console.info(lastName);
+        }
+
+        const person1 = {
+            firstname : "ragastra",
+            midelname : "haryo", 
+            lastname : "wijanarko"
+        }
+        displayPerson(person1);
+
+        // destructuring parameter dalam bentuk array
+        function sum([first, second]){
+            return first + second;
+        }
+
+        console.info(sum(12, 34));
+
+        //destructuring array/object dengan default value dalam parameter
+        const nama2 = ["tara", "arts"]; 
+        const [firstName2, midelName2 = "atris", lastName2 = "indonesia"] = namas2;// apabila ternyata terdapat value untuk lastName2 pada array, maka yang akan diambil adalah nilai yang ada pada array dan bukan pada default value di parameter.
+
+        console.info(firstName2);
+        console.info(midelName2);
+        console.info(lastName2);
+
+        //destructuring dalam array/object bisa menggunakan variable lain.
+        const {
+            firstname : namadepan,
+            midelname : namatengah = "yolo",
+            lastname : namabelakang
+        } = person1
+
+        console.info(namadepan);
+        console.info(namatengah);
+        console.info(namabelakang);
+        
+
+    </script>
+</body>
+</html>
