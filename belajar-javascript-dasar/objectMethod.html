@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object method</title>
+</head>
+<body>
+    <script>
+        function sayHello(name){
+                alert(`hallo ${name}`);
+            }
+
+        const obj = {
+            nama : "Ragastra",
+            sayHallo : function(nama){
+                alert(`hallo ${nama}`);
+            },
+            sayHello : sayHello()
+        };
+        // menambahakan functiion kedalam object sebagai properties
+        obj.sayHai = function(names){
+            alert(`hai ${names}`);
+        }
+
+        obj.sayHallo("tara");
+    </script>
+</body>
+</html>
