@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function Generator</title>
+</head>
+<body>
+    <script>
+        function* createName(){
+            yield "tara";
+            yield "arts";
+            yield "indonesia";
+        }
+
+        const names = createName();
+        for(const name of names){
+            console.info(name);
+        }// function generator hanya bisa di-iterasi.
+        console.info(names[1]);// akan error tidak bisa diakses karena function generator bukan array, hanya saja mirip array.
+
+        //complex case
+        function* generateGanjil(value){
+            for(let i = 1; i <= value; i++){
+                if(i % 2 === 1){
+                    console.info(`yeild ${value}`);
+                    yield i;
+                }
+            }
+        }
+
+        let result = [];
+        function* generateGanjilArray(value){
+            for(let i = 1; i <= value; i++){
+                if(i % 2 === 1){
+                    console.info(`yeild ${value}`);
+                    result.push(i);
+                }
+            }
+        }
+
+        let y = generateGanjil(100);
+        for(const t of y){
+            console.info(t);
+        }
+
+        
+        let u = generateGanjilArray(100);
+        for(const t of u){
+            console.info(t);
+        }
+
+        // kita dapat mengeksekusi generatornya 1 per 1 dengan cara berikut
+        console.info(u.next().value);
+        console.info(u.next().value);
+        console.info(u.next().value);
+        console.info(u.next().value);
+
+        </script>
+</body>
+</html>
