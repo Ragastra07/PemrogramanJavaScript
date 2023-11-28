@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrow function in object</title>
+</head>
+<body>
+    <script>
+        const person = {
+            name : "tara",
+            /*
+            didalam arrow function di sebuah object perlu diperhatikan untuk tidak menggunakan data generator,
+            kata kunci this, argument object.
+            */
+            sayHallo : (name) => {
+                console.info(this) // ini akan mengambil pemilik/object tertinggi kode disini yaitu Windows
+                console.info(`hello ${name}`);
+            }
+        };
+
+        person.sayHello("yanto");
+    </script>
+</body>
+</html>
