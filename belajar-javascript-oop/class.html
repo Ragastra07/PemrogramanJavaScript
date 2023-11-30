@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class</title>
+</head>
+<body>
+    <script>
+        class Person {
+            /*
+            karena secara default class tidak disediakan "()" sebagai parameternya, 
+            maka javascript menyediakan constructor class sebagai parameternya.
+            */
+            constructor(name){
+                console.info(`membuat person ${name}`)
+                // menambahkan property kedalam class.
+                this.name = name
+                /*
+                apabila menambahkan method pada bagian ini(class), maka sejatinya method ini ditempelkan pada object instence nya bukan pada class nya.
+                sangat direkomendasikan untuk penambahan method dilakukan pada prototype object nya.
+                */
+                // this.sayHallo = function(name){
+                //     console.info(`hi ${name}, nama saya ${this.name}`);
+                // };
+            }
+            // apabila kita menambahkan langsung sebuah function/method tanpa ".this" pada class, maka method tersebut secara otomatis akan ditempelkan di prototype nya.
+            sayHallo = function(name){
+                console.info(`hi ${name}, nama saya ${this.name}`);
+            };
+        };
+
+        const tara = new Person("tara"); // untuk pemanggilan instance object nya sama dengan constructor function.
+        console.info(tara);
+        console.info(tara.name);
+        tara.sayHallo("widodo");
+    </script>
+</body>
+</html>
