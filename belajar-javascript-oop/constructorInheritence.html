@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor inheritence</title>
+</head>
+<body>
+    <script>
+        function Employee(firstName){
+            this.firstName = firstName;
+            this.sayHallo = function(name){
+                console.info(`hai ${name}, my name is ${firstName}`);
+            }
+        };
+
+        function Manager(firstName, lastName){
+            // pada bagian "firstName", merupakan parameter yang dibutuhkan pada class Employee.
+            Employee.call(this, firstName); // hal ini akan sangat praktis karena setiap perubahan pada class employee akan secara otomatis pada class manager ini inheritence nya akan ikut berubah.
+            this.lastName = lastName;
+
+        }
+
+        const tara = new Manager("wiranto", "gunawan");
+        console.info(tara);
+    </script>
+</body>
+</html>
