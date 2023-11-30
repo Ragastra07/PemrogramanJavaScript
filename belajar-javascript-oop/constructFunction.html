@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor function</title>
+</head>
+<body>
+    <script>
+        /*
+        jika pembuatan object sepetri pada pembuatan tipe data object, maka object tersebut akan selalu unik
+        artinya object object yang ada tidak akan identik.
+        */
+        const eko = {
+            firstName : "tara",
+            lastName : "arts"
+        };
+
+        const aga = {
+            firstName : "ragastra", 
+            lastName : "haryo"
+        }
+        /*
+        berikut adalah constructor function yang memfasilitasi OOP(class) pada javascript sebelum ECMAScript 6 rilis.
+        hal ini akan berbeda dengan script yang ada setelah ECMAScript 6 rilis, karena fitur OOP pada sebelum versi ECMAScript 6 rilis
+        tidak mendukung OOP.
+        */ 
+        /*
+        dimana aturan nya adalah menggunakan huruf kapital di setiap awal kata nama function.
+        ini akan menandakan bahwasanya function tersebut adalah constructor function untuk membuat 
+        class pada kasus OOP javascript yang lama, hal ini sudah menjadi best practice dari OOP lama javascript.
+        */ 
+       // pada constructor function ini kita dapat memberikan parameter sebagai berikut.
+        function Person(firstName, lastName) {
+            // ini cara kita menambahkan property kedalalam class constructor function, dengan menggunakan kata kunci this.
+            this.firstName = "" 
+            this.lastName = ""
+            // ini cara kita menambahkan property berupa function, yang kemudian property ini kita sebut sebagai method class.
+            this.sayHallo = function(name){
+                console.info(`halo ${name}, my name is ${this.firstName} ${this.lastName}`);
+            }
+        };
+        /*
+        setalah class berhasil dibuat menggunakan constructor function.
+        langkah selanjutnya yaitu membuat object yang sedikit berbeda dengan pembuatan tipedata object sebelum nya yang menggunakan
+        {} untuk membuat sebuah object(tipedata),
+        pada pembuatan object ini, javasctript memerlukan kata kunci "new".
+        */
+        const yanto = new Person();
+        //ini dalah cara bagaimana kita menambahkan value kedalam property yang baru saja di tambahkan ke dalam class
+        yanto.firstName = "Yanto";
+        yanto.lastName = "tooo";
+        yanto.sayHallo("megan");
+
+
+        const gunawan = new person();
+        gunawan.firstName = "Gunawan";
+        gunawan.lastName = "waaaaan";
+        gunawan.sayHallo("wati")
+        
+        //pembuatan object apabila pada constructor function terdapat parameter nya.
+        const budi = new person("budi", "budiman");
+        budi.sayHallo("oppa");
+        const via = new person("via", "valen");
+        via.sayHallo("canada");
+
+
+
+
+    </script>
+</body>
+</html>
