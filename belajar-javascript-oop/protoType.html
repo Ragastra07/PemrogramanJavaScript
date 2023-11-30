@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+<body>
+    <script>
+        function Person(firstName, lastName) {
+            this.firstName = "tara";
+            this.lastName = "arts";
+            this.sayHallo = function(name){
+                console.info(`hello ${name}, my name is ${firstName} ${lastName}`);
+            }
+        }
+
+        const yudi = new Person("yudi", "margono");
+        // jikalau ingin menambahkan method kedalam object instance dengan cara seperti ini, maka method akan ditambahkan pada object instance tersebut saja, tidak secara global
+        // yudi.sayBye = function(){
+        //     console.info("good bye");
+        // }
+        const prabowo = new Person("prabowo", "subianto");
+
+        /*
+        berikut cara yang lain yang dapat dilakukan selain menambahkan property dari/pada construct function, yaitu menambah property method
+        melalui prototype dari construct function nya.
+        hal ini akan berdampak pada prototype dari constructor function dan tidak akan berdampak langsung pada constructor functionnya.
+        */
+        Person.prototype.sayBye = function(){
+            console.info("say good Bye");
+        };
+
+        Person.prototype.run = function(){
+            console.info(`${this.firstName} is running`);
+        };
+        console.log(yudi);
+        console.log(prabowo);
+
+        yudi.sayBye  = function(){
+            console.info("sampai jumpa");
+        };
+
+        yudi.sayBye();// ini akan memapilkan sayBye dengan bahasa indonesia. karena method sayBye barusaja ditambahkan pada object instance yudi.
+        yudi.run();
+
+        prabowo.sayBye();// berbesa dengan yudi. pada method sayBye milik prabowo akan menampilkan dalam bahasa inggirs, karena mengambil method sayBye dari prototype person nya, karena method sayBye pada object instance prabowo tidak ada.
+        prabowo.run();
+    </script>
+</body>
+</html>
