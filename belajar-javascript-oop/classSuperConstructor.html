@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class inheritence</title>
+</head>
+<body>
+    <script>
+        class Employee {
+            constructor(fitstName){
+                this.fitstName = fitstName;
+            }
+            sayHallo(name){
+                console.info(`hi ${name}, my name is employee ${this.firstName}`);
+            }
+        }
+
+        //cara untuk menurunkan kelas Employee ke kelas Manager, dengan menggunakan kata kunci extence
+        class Manager extends Employee {
+            //firstName pada constructor ini mengacu pada firstName constructor Employee.
+            constructor(firstName, lastName){
+                // super hanya boleh digunakan didalam constructor saja, tidak boleh digunakan di luar constructor.
+                super(firstName); // super ini mengacu pada constructor/parameter parent nya, yaitu Employee.
+                this.lastName = lastName;
+            }
+            sayHallo(name){
+                console.info(`hi ${name}, my name is manager ${this.firstName} ${this.lastName}`);
+            }
+        }
+
+        const tara = new Employee("tara");
+        tara.sayHallo("budi");
+
+        const arts = new Manager("arts", "indonesia");
+        tara.sayHallo("ono");
+
+        console.info(tara);
+        console.info(arts);
+    </script>
+</body>
+</html>
