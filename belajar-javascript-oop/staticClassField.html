@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>static class field</title>
+</head>
+<body>
+    <script>
+        class Configuration{
+
+            /*
+            properties berikut tidak akan muncul pada object config, karena property pada class ini bersifat static.
+            karena property pada class ini sudah menjadi class Configuration secara statis yang tidak akan dapat diwariskan.
+            */
+
+            static name = "belajar oop javascript";
+            static version = 1.0;
+            static author = "tara arts";
+        }
+
+        // cara mengubah nilai dari property statis
+        Configuration.author = "ragastra haryo";
+
+        const config = new Configuration();
+        console.info(config);
+        // cara salah mengakses properti yang sifat nya statis.
+        console.info(config.name); // undefined
+        // cara yang benar untuk mengakses properti yang sifat nya statis.
+        console.info(Configuration.name);
+        console.info(Configuration.version);
+        console.info(Configuration.author);
+
+        class MathUtil {
+            static sum(...numbers){
+                let total = 0;
+                for (const number of numbers){
+                    total += number;
+                }
+                return total;
+            }
+        }
+
+        const sum = MathUtil.sum(1,1,1,4,4,3,24,5);
+        console.info(sum);
+    </script>
+</body>
+</html>
