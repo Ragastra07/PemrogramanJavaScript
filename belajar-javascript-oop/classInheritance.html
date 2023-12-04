@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class inheritence</title>
+</head>
+<body>
+    <script>
+        class Employee {
+            sayHallo(name){
+                console.info(`hi ${name}, my name is employee ${this.name}`);
+            }
+        }
+
+        //cara untuk menurunkan kelas Employee ke kelas Manager, dengan menggunakan kata kunci extence
+        class Manager extends Employee {
+            sayHallo(name){
+                console.info(`hi ${name}, my name is manager ${this.name}`);
+            }
+        }
+
+        const tara = new Employee();
+        tara.name = "tara";
+        tara.sayHallo("budi");
+
+        const arts = new Manager();
+        tara.name = "arts";
+        tara.sayHallo("ono");
+
+        console.info(tara);
+        console.info(arts);
+    </script>
+</body>
+</html>
