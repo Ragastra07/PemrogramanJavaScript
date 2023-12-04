@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>instance of</title>
+</head>
+<body>
+    <script>
+    // operator instanceof
+        class Employee {
+
+        }
+
+        class Manager {
+
+        }
+
+        const tara = new Employee();
+        const arts = new Manager();
+
+        console.info(tara instanceof Employee); // true
+        console.info(tara instanceof Manager); // false
+        console.info(arts instanceof Employee); // false
+        console.info(arts instanceof Manager); // true
+    // operator instanceof pada inheritance
+        class Pekerja {
+
+        }
+
+        class Boss extends Pekerja {
+
+        }
+
+        const prabowo = new Pekerja();
+        const anies = new Boss();
+
+        console.info(prabowo instanceof Pekerja); // true
+        console.info(prabowo instanceof Boss); // false
+        // karena Boss adalah turunan dari kelas Pekerja maka akan menghasilkan nilai ture.
+        console.info(anies instanceof Pekerja); // true
+        console.info(anies instanceof Boss); // true
+    </script>
+</body>
+</html>
