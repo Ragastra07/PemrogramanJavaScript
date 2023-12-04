@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>error</title>
+</head>
+<body>
+    <script>
+        class MathUtil {
+            static sum(...numbers){
+                if (numbers.length === 0){
+                    throw new Error("total parameter harus lebih dari 0");
+                }
+
+                let total = 0;
+                for (const number of numbers){
+                    total += number;
+                }
+                return total;
+            }
+        }
+        
+        /*
+        apabila dibagian tryCatch error ini tidak terjadi error, maka bagian blok catch tidak akan di eksekusi.
+        apabila dibagian tryCatch error ini terjadi error, maka pada bagian catch yang akan di eksekusi.
+        selain itu program akan tetap berlanjut. sebagai conton pada console.info("kung king kang"); akan tetap di eksekusi.
+            sangat dianjurkan apabila menggunakan tryCatch maka kita juga menggunakan finally block.
+        yang mana finally block ini sebagai penutup dari tryCatch. finally block akan selalu dieksekusi di akhir,
+        dan akan selalu dieksekusi meskipun kondisi nya terdapat error ataupun tidak.
+            pada bagian catch tidak wajib ada, jadi kita dapat menggunakan tryFinally saja.
+        */ 
+        try {
+            console.info(MathUtil.sum());
+            console.info("kode blok try akan berhenti");
+        } catch (error) {
+            console.error(`Terjadi error : ${error.message}`);
+        } finally {
+            console.info("program tryCatch selesai");
+        }
+
+        console.info("kung king kang");
+
+        
+    </script>
+</body>
+</html>
