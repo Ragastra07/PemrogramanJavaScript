@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+    <script>
+    // object freeze & seal 
+        const person = {
+            firstName : "tara",
+            lastName : "atrs"
+        }
+
+        Object.freeze(person);
+
+        person.firstName = "diubah"; // tidak akan berubah, karena object telah di bekukan atau di freeze
+        delete person.firstName; // tidak akan berubah, karena object telah di bekukan atau di freeze
+        console.info(person);
+
+    // object assign
+    const target = {firstNama : "kung"}
+    const source = {lastNama : "king"}
+
+    Object.assign(target, source); // jika ada yang sama pada target dengan yang ada pada source, maka apa yang ada di target akan ditimpa atau diupdate sesuai dengan yang ada pada source.
+    console.info(target);
+    // object porperties name & value
+    const orang = {
+        namaDepan : "ragastra",
+        namaBelakang : "haryo"
+    }
+
+    console.info(Object.values(orang));
+    console.info(Object.getOwnPropertyNames(orang));
+    </script>
+</body>
+</html>
