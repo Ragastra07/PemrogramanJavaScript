@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>array</title>
+</head>
+<body>
+    <script>
+    // array loop
+        const array =  ["tara", "arts", "insonesia"]
+
+        array.forEach((value, index) => console.info(`${index} : ${value}`));
+    // array Queue
+        const queue = [];
+
+        queue.push("kung");
+        queue.push("king");
+        queue.push("kang");
+
+        console.info(queue.shift());
+        console.info(queue.shift());
+        console.info(queue.shift());
+    // array Queue
+        const stack = [];
+
+        queue.push("ling");
+        queue.push("lung");
+        queue.push("lang");
+
+        console.info(queue.pop());
+        console.info(queue.pop());
+        console.info(queue.pop());
+    // array search
+        const source = [7,3,4,3,5,2,4,5,1,6,8,3,9,2]
+
+        console.info(source.find(value => value > 3));
+        console.info(source.findIndex(value => value > 3)); // 3
+        console.info(source.includes(7)); // true
+        console.info(source.indexof(5)); // 4
+        console.info(source.lastIndexOf(5)); // 8
+    // array filter
+        const numbers = [2,4,2,4,6,87,5,3,3,5,6,9,0,2,1,8,7,9];
+
+        console.info(numbers);
+        console.info(numbers.filter(value => value % 2 === 1));
+        console.info(numbers.filter(value => value % 2 === 0));
+    // array transform
+        const names = "taras artss indonesias".split(" ");
+        console.info(numbers.map(value => value.toUpercase()));
+
+        const angka = [3,4,5,6,2,1,9,7,8]
+        console.info(angka.reduce((result, value) => result + value));
+        console.info(angka.reduceRight((result, value) => result + value));
+    </script>
+</body>
+</html>
