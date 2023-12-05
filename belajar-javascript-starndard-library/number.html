@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>number</title>
+</head>
+<body>
+    <script>
+        const input =  "142365";
+        const number = Number(input);
+
+        console.info(typeof input);
+        console.info(typeof number);
+        console.info(number);
+
+        console.info(Number("salah")); //akan menghasilkan NaN
+
+    // static properties untuk mencari nilai minimum atau pun maximum dari sebuah nilai 
+        console.info(Number.MIN_VALUE);
+        console.info(Number.MAX_VALUE);
+        console.info(Number.MIN_SAFE_INTEGER);
+        console.info(Number.MAX_SAFE_INTEGER);
+
+    // static method untuk mengecek tipedata suatu nilai
+        const data = Number("8947562");
+
+        console.info(Number.isInteger(data));
+        console.info(Number.isNaN(data));
+    
+    // Method Instance Method
+        const value = Number(325476);
+
+        console.info(value.toString(2)); // parameter untuk format binary
+        console.info(value.toLocaleString("id_ID"));
+        console.info(value.toLocaleString("en_US"));
+    </script>
+</body>
+</html>
