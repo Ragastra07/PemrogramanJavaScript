@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set</title>
+</head>
+<body>
+    <script>
+        const set = new Set();
+
+        set.add("tara");
+        set.add("tara");
+        set.add("arts");
+        set.add("indonesia");
+
+        console.info(set); // tara akan muncul hnya satu kali, karena set menjamin tidak terdapat data duplicate
+        set.forEach(value => console.info(value));
+    </script>
+</body>
+</html>
