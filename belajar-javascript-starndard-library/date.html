@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date</title>
+</head>
+<body>
+    <script>
+    // date object
+        const date1 = new Date();
+        console.info(date1);
+
+        const date2 = new Date(2020, 10, 10);
+        console.info(date2);
+
+        const date3 = new Date(2020, 10, 10, 1, 0, 0, 0);
+        console.info(date3);
+    // unix timestamp
+        /*
+        akan lebih mudah apabila mengintegrasikan object waktu dengan bahasa pemrograman lain melalui
+        epoch timestamp nya, karena itu sudah menjadi standard dari semua bahasa pemrograman.
+        apabila mengintegrasikan object waktu ke bahasa pemrograman lain dengan object date nya langsung,
+        maka akan terjadi perbedaan format object date dari anatar bahasa pemrograman.
+        */
+        const timestamp = Date.now();
+        console.info(timestamp);
+
+        const dateUnix = new Date(timestamp);
+        console.info(dateUnix);
+
+        console.info(dateUnix.getTime());
+    // parsing date
+        const parseTimestamp = Date.parse("2006-12-18T10:00:10.123+7:00");
+        console.info(parseTimestamp);
+
+        const parseDate = new Date(parseTimestamp);
+        console.info(parseDate);
+    // getter & setter
+        const tanggal = new Date();
+        tanggal.setFullYear(2022);
+
+        console.info(tanggal.getFullYear());
+        console.info(tanggal.getMonth());
+        console.info(tanggal.getDate());
+        console.info(tanggal.getHours());
+        console.info(tanggal.getMinutes());
+        console.info(tanggal.getSeconds());
+        console.info(tanggal.getMilliseconds());
+        console.info(tanggal.getTimezoneOffset());
+    </script>
+</body>
+</html>
