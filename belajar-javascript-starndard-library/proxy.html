@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>proxy</title>
+</head>
+<body>
+    <script>
+        const target = {}
+    // membuat handler
+        const handler = {
+            get: function(terget, property){
+                return target[property];
+            },
+
+            set: function(target, property, value){
+                target[property] = value;
+            }
+        }
+    // membuat proxy
+        const proxy = new Proxy(target, handler);
+        proxy.firstName = "tara";
+        proxy.lastName = "arts";
+
+        console.info(proxy.firstName);
+        console.info(proxy.lastName);
+    // log handler
+        const handler1 = {
+                get: function(terget1, property1){
+                    console.info(`Access property ${property1}`);
+                    return target1[property1];
+                },
+
+                set: function(target1, property1, value){
+                    console.info(`change property ${property1} : ${value}`);
+                    if(value == null){
+                        throw new Error("tidak boleh null");
+                        target1[property1] = "";
+                    }else{
+                        target1[property1] = value;
+                    }
+                }
+        }
+
+        const proxy1 = new Proxy(target1, handler1);
+        proxy1.firstName = "kung";
+        proxy1.lastName = null;
+
+        console.info(proxy1.firstName);
+        console.info(proxy1.lastName);
+    
+
+    </script>
+</body>
+</html>
