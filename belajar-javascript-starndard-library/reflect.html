@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reflect</title>
+</head>
+<body>
+    <script>
+        const person = {}
+
+        Reflect.set(person, "firstName", "tara");
+        Reflect.set(person, "lastName", "arts");
+
+        console.info(person);
+
+        console.info(Reflect.has(person, "firstName")); //true
+        console.info(Reflect.has(person, "middleName")); //false
+        
+    </script>
+</body>
+</html>
