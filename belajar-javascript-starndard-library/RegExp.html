@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>regular expresion</title>
+</head>
+<body>
+    <script>
+    // cara pembuatan RegExp
+        const regex1 = /[a]/;
+        const regex2 = new RegExp("[a]");
+        const regex3 = new RegExp(/[a]/);
+    // RegExp instance method
+        const name = "tara arts indonesia";
+        const regex = /arts/
+
+        let result = regex.exec(name);
+        /*
+        hal ini akan menghasilkan array, dimana array tersebut berisi berbagai informasi terkait dari regular expression yang sedang didapat.
+        */
+        console.info(result);
+
+        let test = regex.test(name);
+        console.info(test); // akan menghasilkan boolean, unutk mengecek apakah regular expression yang dicari ada atau tidak.
+    // Regexp Modifier
+        const nama = "Ragastra haryo\nragastrA haryo\nragastra Haryo";
+        const regexp1 = /ragastra/g;
+        const regexp2 = /haryo/ig;
+
+        let hasil;
+        while((hasil = regexp1.exec(nama)) !== null){
+            console.info(hasil);
+        }
+        while((hasil = regexp2.exec(nama)) !== null){
+            console.info(hasil);
+        }
+    // regular expression di string
+        const string = "kung king kang aiu eou hati nurani trolo yolo";
+
+        console.info(string.match(/k[ua]/ig)); // [kung, kang]
+        console.info(string.search(/k[ua]/ig)); // 0
+        console.info(string.match(/k[ua]/ig)); // [kung, kang]
+        // di replace semua karena regex
+        console.info(string.replace(/k[ua]/ig, "keren")); // keren king keren aiu eou hati nurani trolo yolo
+        console.info(string.replaceAll(/k[ua]/ig, "keren")); // keren king keren aiu eou hati nurani trolo yolo
+        console.info(string.split(/a/ig)); // [kung, king k, ng, iu eou h, ti nur, ni trolo yolo]
+
+    </script>
+</body>
+</html>
