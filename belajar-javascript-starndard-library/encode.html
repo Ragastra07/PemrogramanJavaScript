@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>encode decode</title>
+</head>
+<body>
+    <script>
+    // encodeURI dan decodeURI
+        const url = "http://www.example.com/?name=Tara arts Indonesia";
+        console.info(url);
+
+        const encoded = encodeURI(url);
+        console.info(encoded);
+
+        const decode = decodeURI(encoded);
+        consoel.info(decode);  
+    // encodeURIComponent dan decodeURIComponent
+        const value = "tara&arts=indonesia";
+        const url1 = "http://www.contoh.com/&?name=";
+
+        const encoded1 = encodeURIComponent(value);
+        console.info(url + encoded1);
+
+        const decode1 = decodeURIComponent(encoded1);
+        console.info(url + decode1);
+    </script>
+</body>
+</html>
