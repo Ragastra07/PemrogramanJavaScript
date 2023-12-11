@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modul object</title>
+
+</head>
+<body>
+    <script type="module">
+        // dengan penulisan import semacam ini apabila atribut modul nya terlalu banyak, akan sangat merepotkan.
+        import {firstName, middleName, lastName, hello, Person} from "./moduleObject.js";
+        // berikut best practice
+        import * as yolo from "./moduleObject.js";
+
+        console.info(yolo.firstName);
+        console.info(yolo.middleName);
+        console.info(yolo.lastName);
+        yolo.hello();
+
+        const person = new Person();
+        console.info(person.name);
+    </script>
+</body>
+</html>
