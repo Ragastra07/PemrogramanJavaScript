@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>without module</title>
+    <script type="module" src="say.js" ></script>
+</head>
+<body>
+    <script type="module"> // hal ini perlu dilakukan untuk melengkapi fitur ekspose module lain yang ingin digunakan di html ini(agar bisa menggunakan import).
+        // penggunaan import untuk menangkap atau mengambil function yang diekspose keluar dari module terkait.
+        import {sayHallo} from "./say.js";// perlu menambahkan "/", "./", or "../" sebagai relative reference
+        sayHallo("tara");
+        /*
+        hal ini akan menghasilkan error apabila tidak adanya fitur import/ekspor pada html ini. karena secara default,
+        saat kita menggunakan firut javascript module, semua kode (function, variable, class dan lain lain) tidak akan diekspos keluar dari module tersebut.
+            jika kita ingin mengekspos keluar dari module tersebut, maka kita harus memberitahunya secara eksplisit.
+        */
+        sayGoodBye("arts");
+    </script>
+</body>
+</html>
