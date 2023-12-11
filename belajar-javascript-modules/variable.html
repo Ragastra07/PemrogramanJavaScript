@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variable module</title>
+    <!-- ini akan menghasilkan string kosong, sehingga perlu menggunakan ekspor import. hal ini akan mengambil variable sesuai dengan pada module nya dan tidak akan terjadi saling tindih variable dari module lain. -->
+    <script type="module" src="variable.js"></script>
+    <!-- apabila kita menggunakan script yang biasanya, maka ini akan bisa digunakan dan mengakses ke globla scope, yang mana akan terjadi saling tindih variable. sehingga sangat berbahaya untuk digunakan -->
+    <script type="text/javascript" src="variable.js"></script>
+    <script type="text/javascript" src="variable2.js"></script>
+</head>
+<body>
+    <script type="module">
+        console.info(name); // kurang lengkap.
+        import {name} from "./variable.js" // yang baik dan benar.
+    </script>
+     <script>
+        console.info(name);
+    </script>
+</body>
+</html>
