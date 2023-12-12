@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NodeList</title>
+</head>
+<body>
+    <ul id="menu1">
+        <li id="first">first</li>
+        <li id="second">second</li>
+        <li id="third">third</li>
+    </ul>
+
+    <ul id="menu2">
+        <li>tara</li>
+        <li>arts</li>
+        <li>indonesia</li>
+    </ul>
+    <script>
+        const list = document.querySelectorAll("li");
+        console.info(list);
+        const list1 = document.querySelectorAll("menu1").childNodes;
+        console.info(list1);
+        const list2 = document.querySelectorAll("menu1").childNodes;
+        console.info(list2);
+
+    // live NodeList
+        const menu1 = document.getElementById("menu1");
+        const listp1 = menu1.childNodes;
+
+        menu1.append(document.createElement("li"));
+        menu1.append(document.createElement("li"));
+
+        console.info(listp1);
+
+    // Static NodeList
+        let daftar = document.querySelectorAll("li");// query pertama
+
+        const menu1static = document.getElementById("menu1");
+        menu1static.append(document.createElement("li"));
+        menu1static.append(document.createElement("li"));
+
+        console.info(daftar);// sifat nya static(tidak langsung berubah)
+
+        daftar = document.querySelectorAll("li");// perlu melakukan query ulang dari query yang pertama
+        console.info(daftar);// maka hasil akan mendapatkan perubahan.
+
+    </script>
+</body>
+</html>
