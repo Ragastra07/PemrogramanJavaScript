@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NamedNodeMap</title>
+</head>
+<body>
+    <img id="logo" src="http://www.programmerzamannow/img/pzn.png" alt="gambar google translate">
+    <script>
+        const logo = document.getElementById("logo");
+        const atribut = logo.getAttributes;
+
+        for(let attribute of atribut){
+            console.info(`${attribute.name} : ${attribute.value}`);
+        }
+
+    </script>
+</body>
+</html>
