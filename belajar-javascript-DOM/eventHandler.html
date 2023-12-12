@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event handler</title>
+</head>
+<body>
+    <input id="clickme" type="button" value="Click Me">
+    <script>
+        const clickMe = document.getElementById("clickme");
+    // event target
+        //addEventListener() bisa lebih dari 1 event / lebih dari 1 handler
+        clickMe.addEventListener("click", function(){
+            clickMe.setAttribute("value", "you already Click Me");
+        });
+    // global event handler
+        //hanya bisa untuk 1 event / 1 handler saja
+        clickMe.onclick = function(){
+           clickMe.setAttribute("value","you already Click"); 
+        }
+    </script>
+</body>
+</html>
