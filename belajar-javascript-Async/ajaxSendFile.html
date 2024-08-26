@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Register</h1>
+    <form >
+        <label for="username">
+            Username:
+            <input type="text" id="username" name="username">
+        </label>
+        <br>
+        <label for="name">
+            name :
+            <input type="text" id="name" name="name">
+        </label>
+        <br>
+        <label for="profile">
+            profile : 
+            <input type="file" id="profile" name="profile">
+        </label>
+    <input type="button" id="register" name="register" value="register">
+    </form>
+    <h1 id="responds"></h1>
+</body>
+<script>
+    function doRegister() {
+        const ajax = new XMLHttpRequest();
+        ajax.open('POST', 'https://eo8nso1iktnps8u.m.pipedream.net');
+        ajax.onload = function () {
+            const responds = document.getElementById('responds');
+            responds.innerText = ajax.responseText;
+        }
+
+        const form = new FormData();
+        form.append('username', document.getElementById('username').value);
+        form.append('name', document.getElementById('name').value);        
+
+        const files = document.getElementById('profile').files;
+        const firstFile = files.item(0);
+        
+        form.append('profile', firstFile);
+        ajax.send(form);
+    }
+
+    document.getElementById('register').onclick = doRegister;
+</script>
+</html>
